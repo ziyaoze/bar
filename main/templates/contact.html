@@ -1,0 +1,70 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+  <!-- ***** Breadcrumb Area Start ***** -->
+  <div class="breadcumb-area bg-img bg-gradient-overlay" style="background-image: url({% static 'img/bg-img/3.jpg' %});">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-12">
+          <h2 class="title">Contact</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="breadcumb--con">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="{% url 'home' %}"><i class="fa fa-home"></i> Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Contact</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Breadcrumb Area End ***** -->
+  
+  <!-- ***** Contact Area Start ***** -->
+<!--  {% if message_name %}-->
+<!--    <center>-->
+<!--      <h2>Thanks {{ message_name }}!</h2>-->
+<!--      <p>We received your email and will respond shortly...</p>-->
+<!--    </center>-->
+<!--    <br/><br/><br/>-->
+<!--  {% else %}-->
+
+  <section class="dento-contact-area mt-50 mb-100">
+    <div class="container">
+
+
+      <div class="row">
+        <!-- Contact Information -->
+        <div class="col-12 col-md-4">
+          <div class="contact-information">
+
+
+            <h5>Phone</h5>
+            <p>+972592823259</p>
+
+            
+
+
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="col-12 col-md-8">
+          <h3>Contact Us we would love to hear from you.</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+  <!-- ***** Contact Area End ***** -->
+
+{% endblock %}

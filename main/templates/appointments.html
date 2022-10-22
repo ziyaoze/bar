@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<br><br> <br>
+
+    <section class="book-an-oppointment-area section-padding-100 bg-img bg-gradient-overlay jarallax clearfix" style="background-image: url('{% static 'img/bg-img/2.jpg' %}');">
+
+      <div class="row">
+        <!-- Section Heading -->
+        <div class="col-12">
+          <div class="section-heading text-center white row" style="margin-left:30%;">
+
+
+     <form method="POST" action="{% url 'open' %}">{% csrf_token %}
+
+                        <button class="btn dento-btn " style="color:white;border-color: {{shop.border}}; background-color:rgb(220,220,220, 0.4);">
+                      Open<img src="{% static 'img/s-c.png' %}" width="25px" height="25px">
+            </button>
+           </form>
+&nbsp;&nbsp;
+
+             <form method="POST" action="{% url 'close' %}">{% csrf_token %}
+                                {% if shop.status is False %}
+               <button class="btn dento-btn " style="color:white;border-color: green; background-color:rgb(220,220,220, 0.4);">
+                           Close
+<img src="{% static 'img/s-o.png' %}" width="25px" height="25px">
+            </button>
+              {% else %}
+               <button class="btn dento-btn " style="color:white; background-color:rgb(220,220,220, 0.4);">
+                           Close
+<img src="{% static 'img/s-o.png' %}" width="25px" height="25px">
+            </button>{% endif %}   </form>
+
+
+</div>
+
+
+
+
+ <br><br>
+            <div class="line"></div>
+          </div>
+        </div>
+      </div>
+<div class="container">
+    <table class="table" style="color:white;border-color: green; background-color:rgb(220,220,220, 0.4);">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">appointments</th>
+
+      <th scope="col">delete</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  {% for i in appointments %}
+    <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td>{{i.name}}</td>
+
+      <td> <form method="POST" action="{% url 'reject' i.id %}">{% csrf_token %}<button type="submit" class="btn " style="background-color:red; color:white;">delete</button></form></td>
+
+   <!-- Button trigger modal -->
+
+
+
+
+
+
+
+    </tr>
+  {% endfor %}
+
+  </tbody>
+</table>
+</div>
+    </section>
+{% endblock %}

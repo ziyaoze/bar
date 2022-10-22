@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<br><br> <br>
+
+    <section class="book-an-oppointment-area section-padding-100 bg-img bg-gradient-overlay jarallax clearfix" style="background-image: url('{% static 'img/bg-img/2.jpg' %}');">
+
+      <div class="row">
+        <!-- Section Heading -->
+        <div class="col-12">
+          <div class="section-heading text-center white">
+
+            <h2>صالون علي</h2>
+ <span style="color:white;">10Am -- 12Am daily except monday</span><br><br>
+
+            <button class="btn dento-btn " style="color:white;border-color: green; background-color:rgb(220,220,220, 0.4);">
+
+                {{shop.open}}
+                {% if shop.status is False %}
+                <img src="{% static 'img/s-o.png' %}" width="25px" height="25px">
+                {% else %}
+                <img src="{% static 'img/s-c.png' %}"  width="25px" height="25px">
+                {% endif %}
+
+            </button><br><br>
+
+
+      <br><br><br>
+               {% if user.is_authenticated %}
+                   <a href="{% url 'appointments' %}" class="btn dento-btn " style="color:white;background-color:rgb(220,220,220, 0.4);">{{user.username}}</a></span><br><br>
+              {% else %}
+                <a href="{% url 'login' %}" class="btn dento-btn " style="color:white;background-color:rgb(220,220,220, 0.4);">Login</a>
+                  {% endif %}
+<br>
+
+   <span style="color:white;">Number of reservations: {{reservations}}</span>
+
+      <br><br><br>
+   <a href="{% url 'bookings' %}" class="btn dento-btn " style="color:white;background-color:rgb(220,220,220, 0.4);">Book Now</a>
+
+<br><br>  <span style="color:white;">your turn will be in 1 hour and 30 minutes</span>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--  &lt;!&ndash; ***** Welcome Area Start ***** &ndash;&gt;-->
+<!--  <section class="welcome-area">-->
+<!--    &lt;!&ndash; Welcome Slides &ndash;&gt;-->
+<!--    <div class="welcome-slides owl-carousel">-->
+<!--      &lt;!&ndash; Single Welcome Slide &ndash;&gt;-->
+<!--      <div class=" bg-img bg-gradient-overlay jarallax" style="background-image: url({% static 'img/bg-img/1.jpg' %});">-->
+<!--        <div class="container h-100">-->
+<!--          <div class="row h-100 align-items-center">-->
+<!--            <div class="col-12">-->
+<!--              &lt;!&ndash; Welcome Text &ndash;&gt;-->
+<!--              <div class="welcome-text text-center">-->
+<!--            <h2 data-animation="fadeInDown" data-delay="100ms">We Believe Everyone Need a HairCut</h2>-->
+<!--                <p data-animation="fadeInDown" data-delay="300ms"> Our HairStyles Make You LOOK ELEGANT-->
+<!--              </p>-->
+
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--        </div>-->
+<!--  </section>-->
+
+
+
+{% endblock %}
