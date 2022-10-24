@@ -20,19 +20,34 @@ def contact(request):
     return render(request, 'contact.html')
 
 
-def bookings(request):
+def bookings(request, pk):
+    barbers=User.objects.all()
+    context={
+        'barbers':barbers
+    }
     if request.method == "POST":
         name=request.POST.get('name')
 
+        barberss=User.objects.get(id=pk)
+
         data = Booking()
         data.name= name
+        data.barber=barberss
 
         data.save()
 
         return redirect('home')
+    return render(request, 'bookings.html', context)
+def barber(request):
+    barbers=User.objects.all()
+    context={
+        'barbers':barbers
+    }
 
 
-    return render(request, 'bookings.html')
+
+    return render(request, 'barber.html', context)
+
 
 @login_required
 def appointments(request):
