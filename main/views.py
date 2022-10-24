@@ -36,12 +36,14 @@ def bookings(request):
 
 @login_required
 def appointments(request):
+    total=Booking.objects.filter(barber=request.user).count()
 
 
     appointments=Booking.objects.all()
     context={
         'appointments':appointments,
-        'shop':Shop.objects.get(id=1)
+        'shop':Shop.objects.get(id=1),
+        'total':total,
     }
 
     return render(request, 'appointments.html', context)
