@@ -28,17 +28,8 @@
 
 
       <br><br><br>
-               {% if user.is_authenticated %}
-                   <a href="{% url 'appointments' %}" class="btn dento-btn " style="color:white;background-color:rgb(220,220,220, 0.4);">{{user.username}}</a></span><br><br>
-              {% else %}
-                <a href="{% url 'login' %}" class="btn dento-btn " style="color:white;background-color:rgb(220,220,220, 0.4);">Login</a>
-                  {% endif %}
-<br>
 
-   <span style="color:white;">Number of reservations: {{reservations}}</span>
-
-      <br><br><br>
-   <a href="{% url 'bookings' %}" class="btn dento-btn " style="color:white;background-color:rgb(220,220,220, 0.4);">Book Now</a>
+   <a href="{% url 'barber' %}" class="btn dento-btn " style="color:white;background-color:rgb(220,220,220, 0.4);">Book Now</a>
 
 <br><br>  <span style="color:white;">your turn will be in 1 hour and 30 minutes</span>
           </div>
