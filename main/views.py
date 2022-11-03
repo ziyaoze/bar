@@ -52,7 +52,7 @@ def barber(request):
 
 @login_required
 def appointments(request):
-    total=Booking.objects.filter(barber=request.user).count()
+    total=Booking.objects.all().count()
 
 
     appointments=Booking.objects.all()
