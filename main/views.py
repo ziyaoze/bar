@@ -11,6 +11,21 @@ def home(request):
 
     booking = Booking.objects.all().count()
     context['reservations'] = booking
+    
+    if request.method == "POST":
+        name=request.POST.get('name')
+
+        
+
+        data = Booking()
+        data.name= name
+        
+
+        data.save()
+
+        return redirect('home')
+    
+    
 
 
     return render(request, 'home.html', context)
