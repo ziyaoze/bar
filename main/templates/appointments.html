@@ -13,7 +13,7 @@
 
      <form method="POST" action="{% url 'open' %}">{% csrf_token %}
 
-                        <button class="btn dento-btn " style="color:white;border-color: {{shop.border}}; background-color:rgb(220,220,220, 0.4);">
+                        <button class="btn dento-btn " style="border-radius: 12px;color:white;border-color: {{shop.border}}; background-color:rgb(220,220,220, 0.4);">
                       Open<img src="{% static 'img/s-c.png' %}" width="25px" height="25px">
             </button>
            </form>
