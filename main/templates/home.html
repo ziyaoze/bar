@@ -29,8 +29,19 @@
 
       <br><br><br>
 
-   <a href="{% url 'barber' %}" class="btn dento-btn " style="border-radius: 12px;color:white;background-color:rgb(220,220,220, 0.4);">Book Now</a>
-
+   < <form action="" method="post">
+              {% csrf_token %}
+              <div class="row">
+                <div class="col-md-6 container">
+                  <div class="form-group mb-30">
+                    <input type="text" name="name" class="text-center form-control"  style="border-radius: 12px;color:white;background-color:rgb(220,220,220, 0.4); placeholder="Your Name" required>
+                  </div>
+                </div>
+         <div class="col-12 text-center">
+                  <button type="submit" class="btn dento-btn " style="border-radius: 12px;color:white;background-color:rgb(220,220,220, 0.4);">Book Now</button>
+                </div>
+              </div>
+            </form>
 <br><br>  <span style="color:white;">your turn will be in 1 hour and 30 minutes</span>
           </div>
 
