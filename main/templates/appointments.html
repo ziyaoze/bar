@@ -21,12 +21,12 @@
 
              <form method="POST" action="{% url 'close' %}">{% csrf_token %}
                                 {% if shop.status is False %}
-               <button class="btn dento-btn " style="color:white;border-color: green; background-color:rgb(220,220,220, 0.4);">
+               <button class="btn dento-btn " style="border-radius: 12px;color:white;border-color: green; background-color:rgb(220,220,220, 0.4);">
                            Close
 <img src="{% static 'img/s-o.png' %}" width="25px" height="25px">
             </button>
               {% else %}
-               <button class="btn dento-btn " style="color:white; background-color:rgb(220,220,220, 0.4);">
+               <button class="btn dento-btn " style="border-radius: 12px;color:white; background-color:rgb(220,220,220, 0.4);">
                            Close
 <img src="{% static 'img/s-o.png' %}" width="25px" height="25px">
             </button>{% endif %}   </form>
@@ -43,8 +43,8 @@
         </div>
       </div>
 <div class="container">
-    <p style="color:white;">{{total}} total appointments</p>
-    <table class="table" style="color:white;border-color: green; background-color:rgb(220,220,220, 0.4);">
+    <p style="border-radius: 12px;color:white;">{{total}} total appointments</p>
+    <table class="table" style="border-radius: 12px;color:white;border-color: green; background-color:rgb(220,220,220, 0.4);">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -60,7 +60,7 @@
       <th scope="row">{{forloop.counter}}</th>
       <td>{{i.name}}</td>
 
-      <td> <form method="POST" action="{% url 'reject' i.id %}">{% csrf_token %}<button type="submit" class="btn " style="background-color:red; color:white;">delete</button></form></td>
+      <td> <form method="POST" action="{% url 'reject' i.id %}">{% csrf_token %}<button type="submit" class="btn " style="border-radius: 12px;background-color:red; color:white;">delete</button></form></td>
 
    <!-- Button trigger modal -->
 
