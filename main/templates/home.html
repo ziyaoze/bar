@@ -15,7 +15,10 @@
             <h2>صالون علي</h2>
  <span style="color:white;">10Am -- 12Am daily except monday</span><br><br>
 
-            <button class="btn dento-btn " style="color:white;border-color: green; background-color:rgb(220,220,220, 0.4);">
+                    <div class="row">
+                <div class="col-md-6 container" style="margin-top:25px;color:white;">
+                  <div class="form-group mb-30" style="color:white;background-color:rgb(220,220,220, 0.4);">
+                   <button class="btn dento-btn " style="margin:15px;border-radius: 12px;color:white;border-color: green; background-color:rgb(220,220,220, 0.4);">
 
                 {{shop.open}}
                 {% if shop.status is False %}
@@ -24,7 +27,14 @@
                 <img src="{% static 'img/s-c.png' %}"  width="25px" height="25px">
                 {% endif %}
 
-            </button><br><br>
+            </button>
+                  </div>
+                    <br><br>
+                </div>
+
+
+</div>
+         <br><br>
 
 
       <br><br><br>
